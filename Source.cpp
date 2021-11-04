@@ -19,20 +19,20 @@
 #include <string>
 #include <vector>
 
-/*
-constexpr auto ZCELL = 1;
-constexpr auto COPYCELL = 2;
-constexpr auto ADDCELL = 3;
-constexpr auto MONUSCELL = 4;
-constexpr auto MULCELL1 = 5;
-constexpr auto MULCELL2 = 6;
-constexpr auto DIVCELL1 = 7;
-constexpr auto DIVCELL2 = 8;
-constexpr auto DIVCELL3 = 9;
-constexpr auto OFFSET = 10;
-constexpr auto BADINPUT = "ERROR: Invalid Input String\n";
-*/
 
+const auto ZCELL = 1;
+const auto COPYCELL = 2;
+const auto ADDCELL = 3;
+const auto MONUSCELL = 4;
+const auto MULCELL1 = 5;
+const auto MULCELL2 = 6;
+const auto DIVCELL1 = 7;
+const auto DIVCELL2 = 8;
+const auto DIVCELL3 = 9;
+const auto OFFSET = 10;
+const auto BADINPUT = "ERROR: Invalid Input String\n";
+
+/*
 #define ZCELL 1
 #define COPYCELL 2
 #define ADDCELL 3
@@ -44,6 +44,7 @@ constexpr auto BADINPUT = "ERROR: Invalid Input String\n";
 #define DIVCELL3 9
 #define OFFSET 10
 #define BADINPUT "ERROR: Invalid Input String\n"
+*/
 
 class returnTuple
 {
