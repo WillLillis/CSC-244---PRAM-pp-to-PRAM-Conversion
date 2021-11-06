@@ -32,6 +32,10 @@ const auto DIVCELL3 = 9;
 const auto OFFSET = 10;
 const auto BADINPUT = "ERROR: Invalid Input String\n";
 
+const auto LENZRO = 3;
+const auto LENCPY = 15;
+const auto LENADD = 19;
+
 /*
 #define ZCELL 1
 #define COPYCELL 2
@@ -148,7 +152,13 @@ returnTuple CopyConvert(unsigned convertedpos, unsigned x, unsigned y)
 
 	converted += ",";
 
+	/*
 	for (unsigned i = 0; i < convertedpos + 7; i++)
+	{
+		converted += "1";
+	}
+	*/
+	for (unsigned i = 0; i < convertedpos + 7 + (2 * LENZRO); i++)
 	{
 		converted += "1";
 	}
@@ -187,7 +197,13 @@ returnTuple CopyConvert(unsigned convertedpos, unsigned x, unsigned y)
 
 	converted += ",";
 
+	/*
 	for (unsigned i = 0; i < convertedpos + 2; i++)
+	{
+		converted += "1";
+	}
+	*/
+	for (unsigned i = 0; i < convertedpos + 2 + (2 * LENZRO); i++)
 	{
 		converted += "1";
 	}
@@ -232,12 +248,18 @@ returnTuple CopyConvert(unsigned convertedpos, unsigned x, unsigned y)
 	}
 
 	converted += ",";
-
+	
+	/*
 	for (unsigned i = 0; i < convertedpos + 7; i++)
 	{
 		converted += "1";
 	}
-
+	*/
+	for (unsigned i = 0; i < convertedpos + 7 + (2 * LENZRO); i++)
+	{
+		converted += "1";
+	}
+	
 	return returnTuple(converted, numinstructs);
 }
 
@@ -318,7 +340,13 @@ returnTuple AdditionConvert(unsigned convertedpos, unsigned x, unsigned y)
 
 	converted += ",";
 
+	/*
 	for (unsigned i = 0; i < convertedpos + 5; i++)
+	{
+		converted += "1";
+	}
+	*/
+	for (unsigned i = 0; i < convertedpos + 5 + LENCPY; i++)
 	{
 		converted += "1";
 	}
@@ -349,7 +377,13 @@ returnTuple AdditionConvert(unsigned convertedpos, unsigned x, unsigned y)
 
 	converted += ",";
 
+	/*
 	for (unsigned i = 0; i < convertedpos + 1; i++)
+	{
+		converted += "1";
+	}
+	*/
+	for (unsigned i = 0; i < convertedpos + 1 + LENCPY; i++)
 	{
 		converted += "1";
 	}
@@ -378,7 +412,34 @@ returnTuple MonusConvert(unsigned convertedpos, unsigned x, unsigned y)
 
 	converted += ",";
 
+	/*
 	for (unsigned i = 0; i < convertedpos + 5; i++)
+	{
+		converted += "1";
+	}
+	*/
+	for (unsigned i = 0; i < convertedpos + 5 +LENCPY; i++)
+	{
+		converted += "1";
+	}
+
+	converted += "#B";
+	numinstructs++;
+
+	for (unsigned i = 0; i < x + OFFSET; i++)
+	{
+		converted += "1";
+	}
+
+	converted += ",";
+
+	/*
+	for (unsigned i = 0; i < convertedpos + 5; i++)
+	{
+		converted += "1";
+	}
+	*/
+	for (unsigned i = 0; i < convertedpos + 5 + LENCPY; i++)
 	{
 		converted += "1";
 	}
@@ -409,7 +470,13 @@ returnTuple MonusConvert(unsigned convertedpos, unsigned x, unsigned y)
 
 	converted += ",";
 
+	/*
 	for (unsigned i = 0; i < convertedpos + 1; i++)
+	{
+		converted += "1";
+	}
+	*/
+	for (unsigned i = 0; i < convertedpos + 1 + LENCPY; i++)
 	{
 		converted += "1";
 	}
@@ -441,7 +508,13 @@ returnTuple MultiplicationConvert(unsigned convertedpos, unsigned x, unsigned y)
 	
 	converted += ",";
 
+	/*
 	for (unsigned i = 0; i < convertedpos + 6; i++)
+	{
+		converted += "1";
+	}
+	*/
+	for (unsigned i = 0; i < convertedpos + 6 + (2 * LENCPY) + LENADD; i++)
 	{
 		converted += "1";
 	}
@@ -468,10 +541,17 @@ returnTuple MultiplicationConvert(unsigned convertedpos, unsigned x, unsigned y)
 
 	converted += ",";
 
+	/*
 	for (unsigned i = 0; i < convertedpos + 2; i++)
 	{
 		converted += "1";
 	}
+	*/
+	for (unsigned i = 0; i < convertedpos + 2 + (2 * LENCPY); i++)
+	{
+		converted += "1";
+	}
+
 
 	return returnTuple(converted, numinstructs);
 }
@@ -504,7 +584,13 @@ returnTuple DivisionConvert(unsigned convertedpos, unsigned x, unsigned y)
 
 	converted += ",";
 
+	/*
 	for (unsigned i = 0; i < convertedpos + 14; i++)
+	{
+		converted += "1";
+	}
+	*/
+	for (unsigned i = 0; i < convertedpos + 14 + (4 * LENCPY) + (LENZRO); i++)
 	{
 		converted += "1";
 	}
@@ -519,7 +605,13 @@ returnTuple DivisionConvert(unsigned convertedpos, unsigned x, unsigned y)
 
 	converted += ",";
 
+	/*
 	for (unsigned i = 0; i < convertedpos + 14; i++)
+	{
+		converted += "1";
+	}
+	*/
+	for (unsigned i = 0; i < convertedpos + 14 + (4 * LENCPY) + (LENZRO); i++)
 	{
 		converted += "1";
 	}
@@ -554,7 +646,13 @@ returnTuple DivisionConvert(unsigned convertedpos, unsigned x, unsigned y)
 
 	converted += ",";
 
+	/*
 	for (unsigned i = 0; i < convertedpos + 11; i++)
+	{
+		converted += "1";
+	}
+	*/
+	for (unsigned i = 0; i < convertedpos + 11 + (3 * LENCPY) + (LENZRO); i++)
 	{
 		converted += "1";
 	}
@@ -569,7 +667,13 @@ returnTuple DivisionConvert(unsigned convertedpos, unsigned x, unsigned y)
 
 	converted += ",";
 
+	/*
 	for (unsigned i = 0; i < convertedpos + 14; i++)
+	{
+		converted += "1";
+	}
+	*/
+	for (unsigned i = 0; i < convertedpos + 14 + (4 * LENCPY) + (LENZRO); i++)
 	{
 		converted += "1";
 	}
@@ -584,7 +688,13 @@ returnTuple DivisionConvert(unsigned convertedpos, unsigned x, unsigned y)
 
 	converted += ",";
 
+	/*
 	for (unsigned i = 0; i < convertedpos + 6; i++)
+	{
+		converted += "1";
+	}
+	*/
+	for (unsigned i = 0; i < convertedpos + 6 + (3 * LENCPY) + (LENZRO); i++)
 	{
 		converted += "1";
 	}
@@ -611,9 +721,15 @@ returnTuple DivisionConvert(unsigned convertedpos, unsigned x, unsigned y)
 
 	converted += ",";
 
+	/*
 	for (unsigned i = 0; i < convertedpos + 6; i++)
 	{
 		converted += "1";	
+	}
+	*/
+	for (unsigned i = 0; i < convertedpos + 6 + (3 * LENCPY) + (LENZRO); i++)
+	{
+		converted += "1";
 	}
 
 	return returnTuple(converted, numinstructs);
@@ -963,7 +1079,7 @@ std::string PRAMpptoPRAM(const char inputcode[])
 				i--;
 			}
 			outputcode.erase(i, 1); //take the $ out
-			outputcode.insert(i, translation[arg1]-arg1, '1');
+			outputcode.insert(i, translation[arg1] - arg1, '1');
 		}
 		else
 		{
